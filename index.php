@@ -82,12 +82,22 @@ $age = $_GET['age'];
 if( empty($name) || empty($email) || empty($age) ) {
     echo 'Inserisci correttamente tutti i dati prima di effettuare l\'accesso';
 } elseif( strlen($name) < 3 || strpos($email, '@') === false || strpos($email, '.') === false || is_int($age) ) {
-    echo 'Accesso non riuscito, riprovare';
+    echo 'Accesso non riuscito, riprovare' . '<br />';
 } else {
-    echo 'Accesso riuscito correttamente';
+    echo 'Accesso riuscito correttamente' . '<br />';
 }
 ?>
 
+<?php
+// SNACK 3 BONUS
+$numbers = [];
+for($i = 0; $i < 15; $i++) {
+    if(!in_array(rand(1,100), $numbers)) {
+        $numbers = rand(1,100) . '<br />';
+    }
+    echo $numbers;
+}
+?>
 
 </body>
 </html>
