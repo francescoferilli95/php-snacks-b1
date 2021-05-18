@@ -28,8 +28,66 @@
 </head>
 <body>
     
+<?php
+// SNACK 1
+$matches = [
+    [
+        'home_team' => 'Olimpia Milano',
+        'visiting_team' => 'Cantù',
+        'home_points' => 55,
+        'visiting_points' => 60,
+    ],
+    [
+        'home_team' =>  'Virtus Bologna',
+        'visiting_team' => 'Polisportiva Dinamo',
+        'home_points' => 40,
+        'visiting_points' => 47,
+    ],
+    [
+        'home_team' => 'Reyer Venezia',
+        'visiting_team' => 'New Basket Brindisi',
+        'home_points' => 50,
+        'visiting_points' => 52,
+    ],
+    [
+        'home_team' => 'Treviso Basket',
+        'visiting_team' => 'Allianz Trieste',
+        'home_points' => 68,
+        'visiting_points' => 71,
+    ],
+    [
+        'home_team' => 'Pallacanestro Varese',
+        'visiting_team' => 'Pallacanestro Reggiana',
+        'home_points' => 63,
+        'visiting_points' => 69,
+    ],
+];
+?>
+
+<ul>
+    <?php for($i = 0; $i < count($matches); $i++) : ?>
+
+        <li>
+            <p><?php echo $matches[$i]['home_team'] . ' ' . $matches[$i]['visiting_team'] . ' | ' . $matches[$i]['home_points'] . ' ' . $matches[$i]['visiting_points']; ?></p>
+        </li>
+    <?php endfor; ?>
+</ul>
+
+<?php
+// SNACK 2
+$name = $_GET['name'];
+$email = $_GET['email'];
+$age = $_GET['age'];
+
+if( empty($name) || empty($email) || empty($age) ) {
+    echo 'Inserisci correttamente tutti i dati prima di effettuare l\'accesso';
+} elseif( strlen($name) < 3 || strpos($email, '@') === false || strpos($email, '.') === false || is_int($age) ) {
+    echo 'Accesso non riuscito, riprovare';
+} else {
+    echo 'Accesso riuscito correttamente';
+}
+?>
 
 
-    
 </body>
 </html>
